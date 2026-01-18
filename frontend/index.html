@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Resume Job Matcher</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+
+<header class="navbar">
+  <div class="nav-inner">
+
+    
+    <div class="logo">
+      <img src="ww.png" alt="RCM Logo" class="logo-img">
+    
+      <span class="logo-text">
+        RESU<span class="check-text">CHECK</span>MAKE
+      </span>
+    </div>
+    
+    
+
+    
+    <div class="nav-actions">
+      <button class="nav-btn login"  onclick="openLogin()" >Login</button>
+      <button class="nav-btn register" onclick="openRegister()"> Register</button>
+          </div>
+
+  </div>
+</header>
+
+<div class="page">
+<div class="container">
+
+
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <h1>AI Resume Checker & Resume Maker</h1>
+    <p>
+      Check ATS score, match job keywords,  
+      and create a professional resume in minutes.
+    </p>
+  
+    <div class="hero-buttons">
+      <button class="cta-btn"
+onclick="requireLogin('resume-checker.html')">
+Check My Resume
+</button>
+
+<button class="cta-btn secondary"
+onclick="requireLogin('template.html')">
+Create Resume
+</button>
+
+
+<p class="hero-note">
+        • Free  • Instant results
+      </p>
+      
+    </div>
+  </div>
+  
+
+
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feature-card">
+    <span class="feature-icon">📊</span>
+    <h3>ATS Match Score</h3>
+    <p>See how well your resume matches the job description.</p>
+  </div>
+
+  <div class="feature-card">
+    <span class="feature-icon">❌</span>
+    <h3>Missing Skills</h3>
+    <p>Find out which keywords recruiters are looking for.</p>
+  </div>
+
+  <div class="feature-card">
+    <span class="feature-icon">📄</span>
+    <h3>Professional Resume</h3>
+    <p>Create clean, ATS-friendly resume PDFs instantly.</p>
+  </div>
+</div>
+
+<div class="how-it-works">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <span>1️⃣</span>
+      <p>Upload your resume (PDF)</p>
+    </div>
+    <div class="step">
+      <span>2️⃣</span>
+      <p>Paste job description</p>
+    </div>
+    <div class="step">
+      <span>3️⃣</span>
+      <p>Get ATS score & suggestions</p>
+    </div>
+  </div>
+  
+</div>
+
+<div class="info-section">
+  <h2>Why ATS Resume Score Matters</h2>
+
+  <p>
+    Most companies use Applicant Tracking Systems (ATS) to filter resumes
+    before a recruiter ever sees them. If your resume is not optimized
+    with the right keywords, it may get rejected automatically.
+  </p>
+
+  <p>
+    Our AI Resume Checker analyzes your resume against the job description,
+    highlights missing skills, and helps you improve your chances of getting
+    shortlisted.
+  </p>
+
+  <h2>Why an ATS-Optimized Resume Maker Matters</h2>
+
+  <p>
+    Recruiters don’t just look for experience — they look for clarity, structure, and ATS 
+    compatibility. Even strong candidates get rejected because their resumes are poorly
+    formatted or not optimized for modern hiring systems.
+  </p>
+
+  <p>
+    Our AI Resume Maker helps you create a clean, professional, and ATS-friendly resume in 
+    minutes. It structures your skills, experience, and projects in a way that Applicant Tracking 
+    Systems can easily read — increasing your chances of passing the first screening.
+  </p>
+  
+</div>
+
+<div class="info-images">
+  <div class="info-image">
+    <img src="tem.png" alt="Create Resume">
+  </div>
+
+  <div class="info-image">
+    <img src="hhh.png" alt="Resume Checker">
+  </div>
+</div>
+
+
+<div class="cta-section">
+  <h2>Ready to Improve Your Resume?</h2>
+  <p>
+    Upload your resume or create a new ATS-optimized resume in minutes.
+  </p>
+
+  <div class="cta-buttons">
+    <button class="cta-btn"
+onclick="requireLogin('resume-checker.html')">
+Check Resume Now
+</button>
+
+<button class="cta-btn secondary"
+onclick="requireLogin('template.html')">
+Create Resume
+</button>
+
+      </div>
+</div>
+
+
+
+<div class="why-us">
+  <h2>Why Choose Our Tool?</h2>
+  <ul>
+    <li>✔ ATS-friendly resume analysis</li>
+    <li>✔ Keyword-based job matching</li>
+    <li>✔ Clean & professional PDF resumes</li>
+    <li>✔ Make professional resume</li>
+  </ul>
+</div>
+
+<div class="templates">
+  <h2>Professional Resume Templates</h2>
+  <p>
+    Choose from clean, ATS-friendly resume layouts designed for every career level.
+  </p>
+
+  <div class="template-grid">
+    <img src="1.webp" alt="Resume Template 1">
+    <img src="2.png" alt="Resume Template 2">
+    <img src="4.jpg" alt="Resume Template 3">
+  </div>
+<br>
+  <button class="cta-btn secondary" onclick="requireLogin('template.html')">>Build My Resume</button>
+</div>
+
+
+
+<div class="testimonials">
+  <h2>What Users Say</h2>
+
+  <div class="testimonial-card">
+    ⭐⭐⭐⭐⭐  
+    <p>“This resume checker helped me improve my ATS score instantly.”</p>
+    <span>— Neil, Software Engineer</span>
+  </div>
+
+  <div class="testimonial-card">
+    ⭐⭐⭐⭐⭐  
+    <p>“Clean UI and very accurate skill matching.”</p>
+    <span>— Laira, Final Year Student</span>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat-box">
+    <h3>50,000+</h3>
+    <p>Resumes Analyzed</p>
+  </div>
+
+  <div class="stat-box">
+    <h3>85%</h3>
+    <p>ATS Match Improvement</p>
+  </div>
+
+  <div class="stat-box">
+    <h3>100%</h3>
+    <p>Free to Use</p>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <p>
+    Join thousands of job seekers who improved their ATS score.
+  </p>
+  <button class="cta-btn"  onclick="requireLogin('resume-checker.html')">>Analyze My Resume</button>
+</div>
+  
+  <div class="final-cta">
+    <h2>Start Your Resume Journey Today</h2>
+    <p>Professional • Free • ATS-friendly</p>
+    <button class="cta-btn secondary" onclick="requireLogin('template.html')">>Get Started</button>
+  </div>
+
+</div>
+</div>
+
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="login-modal">
+  <div class="login-box">
+
+    <h2>Login</h2>
+
+    <!-- Google Login -->
+    <button class="google-btn" onclick="loginWithGoogle()">
+      <img src="https://developers.google.com/identity/images/g-logo.png">
+      Continue with Google
+    </button>
+
+    <div class="divider">OR</div>
+
+    <!-- Email Login -->
+    <form autocomplete="off" onsubmit="return false;">
+      <input
+        type="email"
+        id="loginEmail"
+        placeholder="Email"
+        name="login_email_fake"
+        autocomplete="off"
+      />
+    
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Password"
+        name="login_password_fake"
+        autocomplete="off"
+      />
+    
+      <div class="captcha">
+        <input type="checkbox" id="robotCheck">
+        <label for="robotCheck">
+          I consent to the <a href="terms.html">Terms</a> &
+          <a href="privacy.html">Privacy Policy</a>
+        </label>
+      </div>
+    
+      <button
+        type="button"
+        class="login-submit"
+        onclick="loginUser()"
+      >
+        Login
+      </button>
+    </form>
+    
+    <p class="links">
+      <a href="#">Forget Password</a><br>
+      Don’t have an account? <a href="#" onclick="signup()">Sign up</a>
+    </p>
+
+    <span class="close" onclick="closeLogin()">✖</span>
+  </div>
+</div>
+
+<!-- Register MODAL -->
+<div id="registerModal" class="login-modal">
+  <div class="login-box">
+
+    <h2>Create Account</h2>
+
+    <form autocomplete="off" onsubmit="return false;">
+      <input
+        type="email"
+        id="registerEmail"
+        placeholder="Email"
+        name="register_email_fake"
+        autocomplete="off"     
+      />
+    
+      <input
+        type="password"
+        id="registerPassword"
+        placeholder="Password"
+        name="register_password_fake"
+        autocomplete="off"
+      />
+    
+      <div class="captcha">
+        <input type="checkbox" id="registerConsent">
+        <label for="registerConsent">
+          I agree to <a href="terms.html">Terms</a> &
+          <a href="privacy.html">Privacy Policy</a>
+        </label>
+      </div>
+    
+      <button
+        type="button"
+        class="login-submit"
+        onclick="registerUser()"
+      >
+        Register
+      </button>
+    </form>
+    
+
+    <p class="links">
+      Already have an account?
+      <a href="#" onclick="switchToLogin()">Login</a>
+    </p>
+
+    <span class="close" onclick="closeRegister()">✖</span>
+  </div>
+</div>
+
+
+<!--FOOTER-->
+<footer class="footer">
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <div class="footer-vision">
+    <p class="vision-small">Our Vision is to</p>
+    <h2>Empower Careers with ATS-Optimized Resumes</h2>
+    <div class="vision-line"></div>
+    <p class="vision-address">
+      RESUCHECKMAKE • AI Resume Platform<br>
+      Helping job seekers crack ATS & land interviews
+    </p>
+  </div>
+  
+  <div class="footer-grid">
+
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href='resume-checker.html'>Resume Checker</a>
+      <a href='template.html'>Resume Maker</a>
+      <a href='ats-guide.html'>ATS Guide</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href='resume-tips.html'>Resume Tips</a>
+      <a href='career-advice.html'>Career Advice</a>
+      <a href='faq.html'>FAQs</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <span>support@resucheckmake.com</span>
+    </div>
+  </div>
+  <p class="footer-bottom">
+    © 2026 RESUCHECKMAKE. Designed by Priyansh. All rights reserved.
+  </p>
+</footer>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

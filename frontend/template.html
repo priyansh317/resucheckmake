@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Resume Template</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-inner">
+  
+      
+      <div class="logo">
+        <img src="ww.png" alt="RCM Logo" class="logo-img">
+      
+        <span class="logo-text">
+          RESU<span class="check-text">CHECK</span>MAKE
+        </span>
+        
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn login">Login</button>
+        <button class="nav-btn register">Register</button>
+      </div>
+  
+    </div>
+  </header>
+
+<div class="page">
+<div class="container">
+
+  <h1>Select a Resume Template</h1>
+  <p class="subtitle">Choose a design before building your resume</p>
+
+  <p class="template-intro">
+    Your resume is the first impression recruiters have of you — and it matters more than you think.
+    Different roles and industries expect different resume styles, layouts, and visual structures.
+  </p>
+  
+  <p class="template-intro">
+    To help you stand out and pass Applicant Tracking Systems (ATS), we offer professionally
+    designed resume templates that balance clarity, structure, and modern hiring standards.
+  </p>
+  
+  <p class="template-intro">
+    Each template below is optimized for readability, keyword scanning, and recruiter-friendly
+    formatting. Simply choose a template that best represents your career level and industry,
+    then start building your resume instantly.
+  </p>
+
+  <p class="template-note">
+    Not sure which template to choose?  
+    <br>
+    • <strong>Classic</strong> — Best for traditional roles, freshers, and corporate jobs  
+    <br>
+    • <strong>Modern</strong> — Ideal for tech, startups, and creative professionals  
+    <br>
+    • <strong>Minimal</strong> — Perfect for clean, focused, and ATS-heavy applications
+  </p>
+  
+  
+  <div class="template-grid">
+
+    <div class="template-card" onclick="selectTemplate('classic')">
+      <img src="classic.webp">
+      <h3>Classic</h3>
+    </div>
+
+    <div class="template-card" onclick="selectTemplate('modern')">
+      <img src="modern.png">
+      <h3>Modern</h3>
+    </div>
+
+    <div class="template-card" onclick="selectTemplate('minimal')">
+      <img src="minimal.png">
+      <h3>Minimal</h3>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<script>
+function selectTemplate(templateName) {
+  localStorage.setItem("selectedTemplate", templateName);
+  window.location.href = "resume-maker.html";
+}
+</script>
+
+
+<footer class="footer">
+
+  
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+
+ 
+  <div class="footer-vision">
+    <p class="vision-small">Our Vision is to</p>
+    <h2>Empower Careers with ATS-Optimized Resumes</h2>
+    <div class="vision-line"></div>
+    <p class="vision-address">
+      RESUCHECKMAKE • AI Resume Platform<br>
+      Helping job seekers crack ATS & land interviews
+    </p>
+  </div>
+
+  
+  <div class="footer-grid">
+
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href='resume-checker.html'>Resume Checker</a>
+      <a href='resume-maker.html'>Resume Maker</a>
+      <a href='ats-guide.html'>ATS Guide</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href='resume-tips.html'>Resume Tips</a>
+      <a href='career-advice.html'>Career Advice</a>
+      <a href='faq.html'>FAQs</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <span>support@resucheckmake.com</span>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 RESUCHECKMAKE. All rights reserved.
+  </p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

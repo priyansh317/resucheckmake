@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Maker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="google-site-verification" content="S0DM-hT94LZzB2ycxBveboVHQLr2w2m0jVJh-Rw8YN0" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-inner">
+  
+      
+      <div class="logo">
+        <img src="ww.png" alt="RCM Logo" class="logo-img">
+      
+        <span class="logo-text">
+          RESU<span class="check-text">CHECK</span>MAKE
+        </span>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="nav-btn login">Login</button>
+        <button class="nav-btn register">Register</button>
+      </div>
+  
+    </div>
+  </header>
+
+<div class="page">
+<div class="container">
+
+    <h1>Resume Maker</h1>
+    <p class="subtitle">
+      Create a professional, ATS-friendly resume from scratch
+    </p>
+  
+    <!-- PERSONAL INFO -->
+    <div class="card">
+      <h2>Personal Information</h2>
+  
+      <input id="fullName" type="text" placeholder="Full Name (e.g. Lucas Gael)">
+      <input id="email" type="email" placeholder="Email (e.g. galuc@gmail.com)">
+      <input id="phone" type="text" placeholder="Mobile Number (e.g. 9876543210)">
+      <input id="location" type="text" placeholder="Location (City, Country)">
+    </div>
+  
+    <!-- SKILLS -->
+    <div class="card">
+      <h2>Skills</h2>
+      <textarea id="skills" placeholder="e.g. Python, Java, HTML, CSS, SQL"></textarea>
+    </div>
+  
+    <!-- EDUCATION -->
+    <div class="card">
+      <h2>Education</h2>
+  
+      <input id="edu1" type="text" placeholder="Degree (e.g. B.Tech in Computer Science)">
+      <input id="edu2" type="text" placeholder="Institute / University">
+      <input id="edu3" type="text" placeholder="Year (e.g. 2021 - 2025)">
+    </div>
+  
+    <!-- EXPERIENCE -->
+    <div class="card">
+      <h2>Work Experience</h2>
+  
+      <input id="jobTitle" type="text" placeholder="Job Title (e.g. Backend Intern)">
+      <input id="company" type="text" placeholder="Company Name">
+      <input id="duration" type="text" placeholder="Duration (e.g. Jan 2024 - Jun 2024)">
+      <textarea id="experience" placeholder="Describe your work & achievements"></textarea>
+    </div>
+  
+    <!-- PROJECTS -->
+    <div class="card">
+      <h2>Projects</h2>
+  
+      <input id="projectTitle" type="text" placeholder="Project Title">
+      <textarea id="projects" placeholder="What problem it solves, tech used, your role"></textarea>
+    </div>
+  
+    <!-- EXTRA -->
+    <div class="card">
+      <h2>Extra-Curricular & Achievements</h2>
+      <textarea id="extra" placeholder="Hackathons, Certifications, Volunteering, Awards"></textarea>
+    </div>
+  
+    <!-- BUTTON -->
+    <div class="card">
+      <button onclick="generateResume()">Generate Resume</button>
+    </div>
+  
+    <!-- PREVIEW -->
+<div class="card result-card">
+  <h2>Resume Preview</h2>
+
+  <!-- Resume ka HTML yahan render hoga -->
+  <div id="resumePreview" class="resume-preview"></div>
+
+  <!-- Download button -->
+  <button id="downloadBtn"
+          style="display:none; margin-top:15px;"
+          onclick="downloadResume()">
+    Download Resume PDF
+  </button>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+
+  
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+
+ 
+  <div class="footer-vision">
+    <p class="vision-small">Our Vision is to</p>
+    <h2>Empower Careers with ATS-Optimized Resumes</h2>
+    <div class="vision-line"></div>
+    <p class="vision-address">
+      RESUCHECKMAKE • AI Resume Platform<br>
+      Helping job seekers crack ATS & land interviews
+    </p>
+  </div>
+
+  
+  <div class="footer-grid">
+
+    <div class="footer-col">
+      <h4>Product</h4>
+      <span>Resume Checker</span>
+      <span>Resume Maker</span>
+      <span>ATS Guide</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <span>Resume Tips</span>
+      <span>Career Advice</span>
+      <span>FAQs</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <span>support@resucheckmake.com</span>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 RESUCHECKMAKE. All rights reserved.
+  </p>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

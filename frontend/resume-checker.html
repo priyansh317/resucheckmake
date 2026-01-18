@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Checker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-inner">
+  
+      
+      <div class="logo">
+        <img src="ww.png" alt="RCM Logo" class="logo-img">
+      
+        <span class="logo-text">
+          RESU<span class="check-text">CHECK</span>MAKE
+        </span>
+        
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn login">Login</button>
+        <button class="nav-btn register">Register</button>
+      </div>
+  
+    </div>
+  </header>
+  <div class="page">
+<div class="container">
+
+    <h1>AI Resume Job Matching System</h1>
+    <p class="subtitle">
+      Check how well your resume matches a job description (ATS-style)
+    </p>
+
+    <div class="card">
+      <label>Upload Resume (PDF)</label>
+      <input type="file" id="resumeFile" accept=".pdf">
+      <button onclick="uploadResume()">Upload Resume</button>
+    </div>
+
+    <div class="card">
+      <label>Paste Job Description</label>
+      <textarea id="jobDesc" rows="6"
+        placeholder="e.g. Looking for a backend intern with Python, SQL, HTML..."></textarea>
+      <button onclick="matchJob()">Match Job</button>
+    </div>
+
+    <div class="card result-card">
+      <h2>Result</h2>
+      <div id="result"></div>
+    </div>
+
+</div>
+
+<footer class="footer">
+
+  
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+
+ 
+  <div class="footer-vision">
+    <p class="vision-small">Our Vision is to</p>
+    <h2>Empower Careers with ATS-Optimized Resumes</h2>
+    <div class="vision-line"></div>
+    <p class="vision-address">
+      RESUCHECKMAKE • AI Resume Platform<br>
+      Helping job seekers crack ATS & land interviews
+    </p>
+  </div>
+
+  
+  <div class="footer-grid">
+
+    <div class="footer-col">
+      <h4>Product</h4>
+      <span>Resume Checker</span>
+      <span>Resume Maker</span>
+      <span>ATS Guide</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <span>Resume Tips</span>
+      <span>Career Advice</span>
+      <span>FAQs</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <span>support@resucheckmake.com</span>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 RESUCHECKMAKE. All rights reserved.
+  </p>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
