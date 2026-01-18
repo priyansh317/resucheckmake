@@ -1,71 +1,142 @@
-# AI Resume–Job Matching System
+# RESUCHECKMAKE 🚀  
+### AI Resume Checker & Resume Builder (ATS-Optimized)
 
-## Problem Statement
-Recruiters receive resumes and job descriptions in highly inconsistent formats.
-Existing systems often fail when skills are misspelled, missing, or poorly structured.
+RESUCHECKMAKE is a full-stack AI-powered web application that helps job seekers analyze, improve, and build professional resumes that are optimized for Applicant Tracking Systems (ATS).
 
-## Solution
-This project is a robust backend system that intelligently matches resumes with job descriptions,
-even when inputs are noisy, incomplete, or inconsistent.
+This platform combines **resume analysis**, **job matching**, and **resume creation** into a single, easy-to-use tool—similar to real-world products like Novoresume and Enhancv.
 
-The system focuses on:
-- Resume parsing
-- Skill normalization
-- Fuzzy matching
-- Graceful error handling
--most appropriate scoring scheme.
+---
 
-## Key Features
-- PDF resume upload
-- Section-wise resume parsing
-- Skill extraction and normalization
-- Fuzzy matching for spelling errors
-- Honest match scoring
-- Edge-case handling for vague inputs
+## ✨ Features
 
-## Architecture Overview
-1. Resume uploaded as PDF
-2. Text extracted using PyPDF2
-3. Resume divided into logical sections
-4. Skills extracted and normalized
-5. Job description skills extracted
-6. Matching engine compares skills
-7. Match score and insights returned
+### 🔍 AI Resume Checker
+- Upload resume in **PDF format**
+- Automatic text extraction from resume
+- Match resume skills with job description
+- Calculate **ATS Match Score**
+- Display:
+  - ✅ Matched Skills  
+  - ❌ Missing Skills  
 
-## API Endpoints
+---
 
-### POST /upload-resume
-Uploads resume and extracts structured data.
+### 📝 Resume Builder
+- Build resume from scratch
+- Structured inputs for:
+  - Personal details
+  - Skills
+  - Education
+  - Experience
+  - Projects
+  - Extra-curricular activities
+- Live resume preview
+- Download resume as **professional PDF**
 
-### POST /match-job
-Compares resume skills with job description skills and returns:
-- Match score
-- Matched skills
-- Missing skills
+---
 
-## Edge Case Handling
-- Resume without skills section
-- Job description without clear skill requirements
-- Misspelled skills (e.g. pythn → python)
-- Empty or invalid inputs
+### 🎨 Resume Templates
+Choose from multiple ATS-friendly templates:
 
-## Tech Stack
-- Python
-- FastAPI
-- Operating system (OS)
-- List
-- Basemodel
-- PyPDF2
-- Regex
-- Difflib
-- corsmiddleware
+- **Classic**  
+  Best for freshers, corporate roles, and traditional industries  
 
-## Future Improvements
-- NLP-based semantic matching
-- Database integration
-- Frontend UI
-- Role-based scoring
-- Give suggestions according to the requirements 
+- **Modern**  
+  Ideal for tech roles, startups, and creative professionals  
 
-## Author
-Priyansh Garg
+- **Minimal**  
+  Clean, focused, and highly ATS-optimized design  
+
+Each template provides:
+- Accurate preview & PDF output
+- Professional fonts, spacing, and colors
+- Clear section separation for recruiters
+
+---
+
+### 🔐 Authentication & Security
+- Email & password authentication
+- Password hashing using **bcrypt**
+- SQLite database for users
+- Google OAuth login support
+- Secure sessions and CORS protection
+
+---
+
+## 🧠 Tech Stack
+
+### Frontend
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla)  
+- LocalStorage  
+
+### Backend
+- Python  
+- FastAPI  
+- ReportLab (PDF generation)  
+- PyPDF2 (PDF text extraction)  
+- SQLite  
+
+### Security
+- Passlib (bcrypt hashing)  
+- Google OAuth (Authlib)  
+- Session Middleware  
+- CORS Middleware  
+
+---
+
+## 📂 Project Structure
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/your-username/resucheckmake.git
+cd resucheckmake
+2️⃣ Backend Setup
+cd backend
+pip install -r requirements.txt
+
+
+Create a .env file:
+
+SESSION_SECRET=your_secret_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_REDIRECT_URI=http://127.0.0.1:8000/login/google/callback
+
+🔁 Application Flow
+
+1)User logs in (Email / Google)
+2)Selects resume template
+3)Enters resume details
+4)Live preview is generated
+5)PDF is created via backend
+6)Resume is downloaded
+7)Resume is matched against job description
+
+🔐 Security Highlights
+
+1)Passwords are never stored in plain text
+2)Bcrypt hashing ensures irreversible encryption
+3)Secure API communication
+4)Session-based authentication
+
+Future Improvements
+1)AI-based resume suggestions
+2)Multiple experience & project blocks
+3)User dashboard
+4)Resume version history
+5)Cloud deployment
+
+👨‍💻 Author
+Priyansh
+📧 Email: support@resucheckmake.com
+
+📜 License
+
+This project is created for educational and portfolio purposes.
+© 2026 RESUCHECKMAKE. All rights reserved.
