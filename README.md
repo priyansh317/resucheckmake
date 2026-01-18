@@ -107,36 +107,66 @@ SESSION_SECRET=your_secret_key
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 GOOGLE_REDIRECT_URI=http://127.0.0.1:8000/login/google/callback
+```
+---
 
-🔁 Application Flow
+## 🔁 Application Flow
+- User logs in (Email / Google)
+- Selects a resume template
+- Enters resume details
+- Live resume preview is generated
+- PDF resume is created via backend
+- Resume is downloaded
+- Resume is matched against job description
 
-1)User logs in (Email / Google)
-2)Selects resume template
-3)Enters resume details
-4)Live preview is generated
-5)PDF is created via backend
-6)Resume is downloaded
-7)Resume is matched against job description
+---
 
-🔐 Security Highlights
+## 🔐 Security Highlights
+- Passwords are never stored in plain text
+- Bcrypt hashing ensures irreversible encryption
+- Secure API communication
+- Session-based authentication
 
-1)Passwords are never stored in plain text
-2)Bcrypt hashing ensures irreversible encryption
-3)Secure API communication
-4)Session-based authentication
+---
 
-Future Improvements
-1)AI-based resume suggestions
-2)Multiple experience & project blocks
-3)User dashboard
-4)Resume version history
-5)Cloud deployment
+## 🔐 Authentication & Security
+- Email & password authentication
+- Password hashing using **bcrypt**
+- SQLite database for user storage
+- Google OAuth login support
+- Secure sessions and CORS protection
 
-👨‍💻 Author
-Priyansh
-📧 Email: support@resucheckmake.com
+---
 
-📜 License
+## 🚀 Features
+- ATS resume score calculation
+- Job description keyword matching
+- Missing & matched skills analysis
+- Live resume preview
+- Professional PDF resume generation
+- Multiple resume templates:
+  - Classic
+  - Modern
+  - Minimal
 
-This project is created for educational and portfolio purposes.
-© 2026 RESUCHECKMAKE. All rights reserved.
+---
+
+## 🔮 Future Improvements
+- AI-based resume suggestions
+- Multiple experience & project blocks
+- User dashboard
+- Resume version history
+- Cloud deployment
+
+---
+
+## 👨‍💻 Author
+**Priyansh**  
+📧 Email: [support@resucheckmake.com](mailto:support@resucheckmake.com)
+
+---
+
+## 📜 License
+This project is created for **educational and portfolio purposes only**.  
+© 2026 **RESUCHECKMAKE**. All rights reserved.
+
