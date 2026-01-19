@@ -49,7 +49,7 @@ app.add_middleware(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://127.0.0.1:5500",
-        "https://your-frontend-domain.com"],        # sab origins allow (development) means kisi website se request aaye toh allow krde
+        "https://zesty-croquembouche-388158.netlify.app"],        # sab origins allow (development) means kisi website se request aaye toh allow krde
     allow_credentials=True,
     allow_methods=["*"],        # GET, POST, etc.
     allow_headers=["*"],
