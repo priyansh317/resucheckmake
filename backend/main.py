@@ -48,10 +48,13 @@ app.add_middleware(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500",
-        "https://resucheckmake.netlify.app/"],        # sab origins allow (development) means kisi website se request aaye toh allow krde
+    allow_origins=[
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
+        "https://resucheckmake.netlify.app"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],        # GET, POST, etc.
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
