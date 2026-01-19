@@ -1021,6 +1021,9 @@ async def google_login(request: Request):
 async def google_callback(request: Request):
     token = await oauth.google.authorize_access_token(request) #ye google se acess token leta h ki ye user verified h
     user_info = token.get("userinfo")
+    if not user_info:
+        user_info = await oauth.google.parse_id_token(request, token)
+
 
     if not user_info:
         return {"success": False, "message": "Google login failed"}
