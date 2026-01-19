@@ -1046,6 +1046,8 @@ async def google_callback(request: Request):
         conn.commit()
 
     # Frontend redirect
+    frontend_url = os.getenv("FRONTEND_URL")
+
     return RedirectResponse(
-        url=f"http://127.0.0.1:5500/frontend/index.html?google_login_success=true&email={email}"
+    url=f"{frontend_url}?google_login_success=true&email={email}"
 )
