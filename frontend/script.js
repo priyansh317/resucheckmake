@@ -579,7 +579,7 @@ function requireLogin(redirectUrl) {
 //google login
 
 function loginWithGoogle() {
-  window.location.href = `${API}/login/google`;
+  window.location.href = "https://resucheckmake-backend.onrender.com/login/google";
 }
 
 
