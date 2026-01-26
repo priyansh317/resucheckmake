@@ -25,6 +25,7 @@
 
     
     <div class="nav-actions">
+      <button class="ai-btn" onclick="openAIChat()">🤖 Ask AI</button>
       <button class="nav-btn login"  onclick="openLogin()" >Login</button>
       <button class="nav-btn register" onclick="openRegister()"> Register</button>
           </div>
@@ -355,6 +356,36 @@ Create Resume
     <span class="close" onclick="closeRegister()">✖</span>
   </div>
 </div>
+
+
+<!--AI chatbot-->
+<div id="aiChatModal" class="ai-modal">
+  <div class="ai-chat-box">
+
+    <div class="ai-header">
+      <span>AI Career Assistant</span>
+      <button onclick="closeAIChat()">✖</button>
+    </div>
+
+    <div id="chatMessages" class="ai-messages">
+      <div class="ai-msg ai">
+        Hi 👋 Ask me anything about resumes, jobs, skills!
+      </div>
+    </div>
+
+    <div class="ai-input">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Type your question..."
+        onkeydown="if(event.key==='Enter') sendMessage()"
+      />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+  </div>
+</div>
+
 
 
 <!--FOOTER-->

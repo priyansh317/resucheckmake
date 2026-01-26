@@ -1,27 +1,48 @@
-const API = "http://127.0.0.1:8000";
+const API =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://127.0.0.1:8000"
+    : "https://resucheckmake-backend.onrender.com";
 
 
-async function uploadResume() {
-  const file = document.getElementById("resumeFile").files[0]; //isse html me jo id h usse resume is cons file me aa gya 
-
-  if (!file) {
-    alert("Please select a resume PDF");
-    return;
+function restoreResumeData() {
+  if (!window.resumeData) {
+    const saved = localStorage.getItem("resumeData");
+    if (saved) {
+      window.resumeData = JSON.parse(saved);
+    }
   }
+}
+async function uploadResume() {
+  restoreResumeData();
+  try{
+    const file = document.getElementById("resumeFile").files[0]; //isse html me jo id h usse resume is cons file me aa gya 
 
-  const formData = new FormData(); // ye ek special js object h jo file+data backend ko bhejne k kaam aata h
-  formData.append("file", file);  // file ko formdata se attach krta h
-  //yha pr key ka name "file" isliye rka kyuki backend me async def upload_resume(file: UploadFile = File(...)):  uploadFile wala file me jaa rha h
+    if (!file) {
+      alert("Please select a resume PDF");
+      return;
+    }
+
+    const formData = new FormData(); // ye ek special js object h jo file+data backend ko bhejne k kaam aata h
+    formData.append("file", file);  // file ko formdata se attach krta h
+    //yha pr key ka name "file" isliye rka kyuki backend me async def upload_resume(file: UploadFile = File(...)):  uploadFile wala file me jaa rha h
 
 
-  //FETCH KA USE URL JESO K LIYE HEE HOTA H AND USME URL AND DATA KIS TYPE ME JAYEGA WO SB DENA PDTA H
-  const res = await fetch(`${API}/upload-resume/`, {  //fetch se wo backend me data bhejta h and usse jo return me milta h usko leta h jese ki isme return me mila resume processed successfully
-    method: "POST",
-    body: formData
-  });
+    //FETCH KA USE URL JESO K LIYE HEE HOTA H AND USME URL AND DATA KIS TYPE ME JAYEGA WO SB DENA PDTA H
+    const res = await fetch(`${API}/upload-resume/`, {  //fetch se wo backend me data bhejta h and usse jo return me milta h usko leta h jese ki isme return me mila resume processed successfully
+      method: "POST",
+      body: formData
+    });
 
-  const data = await res.json();   //isse jo resume se return aaya h wo data me aa gya 
-  alert(data.message);  //isse user ko mssg dekta h pop up hoke
+    const data = await res.json();   //isse jo resume se return aaya h wo data me aa gya 
+    window.resumeData = data.parsed_data;
+    localStorage.setItem("resumeData", JSON.stringify(data.parsed_data));
+
+    alert(data.message);  //isse user ko mssg dekta h pop up hoke
+  }catch (err) {
+    console.error("Upload error:", err);
+    alert("Something went wrong while uploading resume");
+  }
 }
 
 
@@ -68,6 +89,8 @@ function displayResult(data) {
 
 
 async function matchJob() {
+  restoreResumeData();
+
   const jd = document.getElementById("jobDesc").value;
 
   if (jd.length < 10) {
@@ -556,8 +579,9 @@ function requireLogin(redirectUrl) {
 //google login
 
 function loginWithGoogle() {
-  window.location.href = "http://127.0.0.1:8000/login/google";
+  window.location.href = `${API}/login/google`;
 }
+
 
 window.onload = function () {
   // Navbar update (normal login)
@@ -579,3 +603,46 @@ window.onload = function () {
   }
 };
 
+
+
+//AI chatbot addd krne k liye 
+function openAIChat() {
+  document.getElementById("aiChatModal").style.display = "flex";
+}
+
+function closeAIChat() {
+  document.getElementById("aiChatModal").style.display = "none";
+}
+
+
+function addChatMessage(type, text) {
+  const box = document.getElementById("chatMessages");
+  const div = document.createElement("div");
+  div.className = `ai-msg ${type}`; //isse ye ho rha h ki agar yha user aata h toh ye style me user k according hee background color bgera lega
+  div.innerText = text;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight; //isse chat apne aap hee neeche scroll hoti jayegi
+}
+
+async function sendMessage() {
+  const input = document.getElementById("chatInput");
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  addChatMessage("user", msg); //isse mssg screen pr dikne lgega (user isliye use kiya h jisse hm neeche ek function bnayenge jisme user and AI se color bgera change krenge jisse AI answer and user doubt alag alag dikenge)
+  input.value = "";  //isse jha question likte h wo jgah khaali ho jayegi
+
+  try {
+    const res = await fetch(`${API}/ai/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: msg })
+    });
+
+    const data = await res.json();
+    addChatMessage("ai", data.reply);
+
+  } catch (err) {
+    addChatMessage("ai", "⚠️ AI server error. Try again later.");
+  }
+}

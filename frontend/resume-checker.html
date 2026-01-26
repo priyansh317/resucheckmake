@@ -21,6 +21,7 @@
         
       </div>
       <div class="nav-actions">
+        <button class="ai-btn" onclick="openAIChat()">🤖 Ask AI</button>
         <button class="nav-btn login">Login</button>
         <button class="nav-btn register">Register</button>
       </div>
@@ -38,7 +39,7 @@
     <div class="card">
       <label>Upload Resume (PDF)</label>
       <input type="file" id="resumeFile" accept=".pdf">
-      <button onclick="uploadResume()">Upload Resume</button>
+      <button type= 'button' onclick="uploadResume()">Upload Resume</button>
     </div>
 
     <div class="card">
@@ -53,6 +54,17 @@
       <div id="result"></div>
     </div>
 
+    <button class="cta-btn secondary" onclick="improveWithAI()">
+      Improve resume with AI 
+    </button>
+    
+    <div id="aiSummaryBox" style="display:none; margin-top:20px;">
+      <h3>AI Suggested Professional Summary</h3>
+      <p id="aiSummaryText"></p>
+    
+      <button onclick="useAISummary()">Use this summary</button>
+    </div>
+    
 </div>
 
 <footer class="footer">

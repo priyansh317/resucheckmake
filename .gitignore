@@ -4,10 +4,10 @@ __pycache__/
 
 # Environment variables
 .env
-
+venv/
 # Database
 users.db
-
+*.sqlite3
 # Uploads / user data
 uploads/
 

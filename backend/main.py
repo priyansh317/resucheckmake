@@ -26,6 +26,9 @@ from reportlab.platypus import Table, TableStyle
 import sqlite3
 from passlib.context import CryptContext   #isse hee password encrypt hota h
 
+#FOR CHATBOT AI
+import requests
+
 #for login
 from fastapi import Body
 from fastapi import Request
@@ -39,7 +42,22 @@ from fastapi.responses import RedirectResponse  #google ko ek url se duusre url 
 app = FastAPI()
 LAST_RESUME_SKILLS = []   #ye ek global variable banya h jo last upload resume k skills ko store krega jisko hm job description se compare krenge
 
-load_dotenv()  #isse python ne env file pdli h
+env_path = os.path.join(os.path.dirname(__file__), ".env")
+if os.path.exists(env_path):
+    load_dotenv(env_path)
+else:
+    print("⚠️ .env file not found")
+  #isse python ne env file pdli h
+#FOR CHATBPT AI
+HF_API_KEY = os.getenv("HF_API_KEY")
+
+HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/facebook/blenderbot-400M-distill"
+
+headers = {
+    "Authorization": f"Bearer {HF_API_KEY}"
+}
+
+
 app.add_middleware(
     SessionMiddleware,
     secret_key=os.getenv("SESSION_SECRET")
@@ -56,6 +74,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+
 )
 
 
@@ -1054,3 +1073,44 @@ async def google_callback(request: Request):
     return RedirectResponse(
     url=f"{frontend_url}?google_login_success=true&email={email}"
 )
+
+
+
+#AI CHATBOT
+class ChatRequest(BaseModel):
+    message: str
+
+
+@app.post("/ai/chat")
+async def ai_chat(data: ChatRequest):
+    user_message = data.message.strip()
+
+    if len(user_message) < 2:
+        return {"reply": "Please ask a proper question 🙂"}
+
+    payload = {
+        "inputs": user_message
+    }
+
+    response = requests.post(
+        HF_MODEL_URL,
+        headers=headers,
+        json=payload,
+        timeout=10
+    )
+
+    if response.status_code != 200:
+        return {
+            "reply": f"HF error {response.status_code}: {response.text}"
+        }
+
+    result = response.json()
+
+    # HuggingFace response format
+    if isinstance(result, list) and len(result) > 0:
+        reply = result[0].get("generated_text", "I couldn't understand that.")
+    else:
+        reply = "AI is warming up, try again."
+
+
+    return {"reply": reply}
